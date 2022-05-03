@@ -15,6 +15,14 @@ const mouseDown = (add) => {
   }, 20);
 };
 
+const mouseClick = (add) => {
+  if (add) {
+    rotationOptions.y += 0.5;
+  } else {
+    rotationOptions.y -= 0.5;
+  }
+};
+
 const mouseUp = () => {
   clearInterval(timeout);
 };
@@ -39,23 +47,23 @@ const mouseUp = () => {
     />
 
     <div class="buttons">
-      <a
+      <button
         class="button-left"
         @mousedown="mouseDown(false)"
         @mouseup="mouseUp"
-        @mouseleave="mouseUp"
+        @click="mouseClick(false)"
       >
         <img src="@/assets/chevron-down.svg" style="width: 40px; height: 40px">
-      </a>
+      </button>
 
-      <a
+      <button
         class="button-right"
+        @click="mouseClick(true)"
         @mousedown="mouseDown(true)"
         @mouseup="mouseUp"
-        @mouseleave="mouseUp"
       >
         <img src="@/assets/chevron-down.svg" style="width: 40px; height: 40px">
-      </a>
+      </button>
     </div>
   </div>
 </template>

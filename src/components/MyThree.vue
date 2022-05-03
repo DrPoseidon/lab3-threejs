@@ -69,7 +69,7 @@
 
   const createScene = () => {
     scene = new THREE.Scene();
-  }
+  };
 
   const init = () => {
     createRenderer();
